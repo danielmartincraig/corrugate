@@ -10,7 +10,7 @@
 ;   - See https://calva.io/connect-sequences/
 ; 
 ; Starting Jack-in Terminal: pushd /home/danielcraig/Repos/corrugate ; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M:dev -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware shadow.cljs.devtools.server.nrepl/middleware]" ; popd
-; Using host:port localhost:39501 ...
+; Using host:port localhost:45103 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; TIPS:
@@ -31,17 +31,918 @@ clj꞉user꞉> 
 ; shadow-cljs - HTTP server available at http://localhost:8080
 ; [:app] Configuring build.
 ; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 67.20s)
 ; Cljs builds started
-; [:app] Build completed. (219 files, 0 compiled, 0 warnings, 47.11s)
 ; Please start your ClojureScript app (load it in the browser, or whatever is appropriate) so that Calva can connect to its REPL...
-clj꞉user꞉> 
 ; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Waiting for Shadow CLJS runtimes, start your CLJS app...
+; Timed out waiting for Shadow CLJS runtimes, pretending we are connected.
 ; Connected session: cljs, repl: :app
 ; TIPS: You can choose which REPL to use (clj or cljs):
 ;    *Calva: Toggle REPL connection*
 ;    (There is a button in the status bar for this)
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.cljs'
 nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
 cljs꞉user꞉>  ; Use `alt+enter` to evaluate
 ; Jack-in done.
 cljs꞉user꞉> 
+#object[Function]
+cljs꞉app.core꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 7.05s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 5.39s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.72s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.92s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 2.00s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.35s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 5.58s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 2.02s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.19s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.17s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 7.28s)
+true
+cljs꞉app.subs꞉> 
+[[0 1 0] [0 1 0] [1 1 1]]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 6.00s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:11:54
+; --------------------------------------------------------------------------------
+;    8 |                    (filter (and (fn [c] (every? #(<= 0 % 4) c))
+;    9 |                                 (fn [c] (zero? (get-in @components c)))
+;   10 |                                 (fn [c] (= (get-in image c) 1)))
+;   11 |                            (map (partial map + root) directions)))
+; ------------------------------------------------------------^-------------------
+;  Use of undeclared Var app.subs/directions
+; --------------------------------------------------------------------------------
+;   12 |         branch-fn (fn [c] (and (zero? (get-in @components c))
+;   13 |                                (= (get-in image c) 1)))
+;   14 |         walk (fn walk [c]
+;   15 |                (when (branch-fn c)
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 2.12s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:28:12
+; --------------------------------------------------------------------------------
+;   25 |       (doseq [j (range dimension)]
+;   26 |         (when (and (= (get-in image [i j]) 1)
+;   27 |                    (zero? (get-in @components [i j])))
+;   28 |           (dfs image components (swap! count inc) [i j]))))
+; ------------------^-------------------------------------------------------------
+;  Use of undeclared Var app.subs/dfs
+; --------------------------------------------------------------------------------
+;   29 |     @components))
+;   30 | 
+;   31 | (comment
+;   32 | 
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.58s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.75s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.52s)
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 8.85s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 10.37s)
+; 
+; ------ WARNING #1 - :fn-arity --------------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:33:11
+; --------------------------------------------------------------------------------
+;   30 |       (doseq [j (range dimension)]
+;   31 |         (when (and (= (get-in image [i j]) 1)
+;   32 |                    (zero? (get-in @distance-matrix [i j])))
+;   33 |           (dfs image distance-matrix i j))))
+; -----------------^--------------------------------------------------------------
+;  Wrong number of args (4) passed to app.subs/dfs
+; --------------------------------------------------------------------------------
+;   34 |     @distance-matrix))
+;   35 | 
+;   36 | (comment
+;   37 | 
+; --------------------------------------------------------------------------------
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+nil
+; ------ WARNING - :fn-arity -----------------------------------------------------
+;  Resource: <eval>:9:11
+;  Wrong number of args (4) passed to app.subs/dfs
+; --------------------------------------------------------------------------------
+; 
+; 
+; ------ WARNING - :fn-arity -----------------------------------------------------
+;  Resource: <eval>:9:11
+;  Wrong number of args (4) passed to app.subs/dfs
+; --------------------------------------------------------------------------------
+; 
+; 
+; ------ WARNING - :fn-arity -----------------------------------------------------
+;  Resource: <eval>:9:11
+;  Wrong number of args (4) passed to app.subs/dfs
+; --------------------------------------------------------------------------------
+; 
+; 
+; ------ WARNING - :fn-arity -----------------------------------------------------
+;  Resource: <eval>:9:11
+;  Wrong number of args (4) passed to app.subs/dfs
+; --------------------------------------------------------------------------------
+; 
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.27s)
+[[0 1 0] [0 1 0] [1 1 1]]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [1 1 1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [1 1 1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [0 0 0]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [1 1 1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [0 0 0]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [1 1 1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 0 0] [0 0 0] [1 1 1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 0 0] [0 0 0] [1 1 0]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 0 0] [0 0 0] [0 1 1]]"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.24s)
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.87s)
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (RangeError) at (<cljs repl>:1).
+; Maximum call stack size exceeded
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (RangeError) at (<cljs repl>:1).
+; Maximum call stack size exceeded
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.86s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.16s)
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.08s)
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.19s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.72s)
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.74s)
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: re-frame: log called with unknown level: :info
+; (contains? (clojure.core/deref loggers) level)
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.46s)
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[-1 -1 -1] [-1 -1 -1] [-1 -1 -1]]"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 11.43s)
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (square? m)
+cljs꞉app.subs꞉> 
+#'app.subs/dfs
+cljs꞉app.subs꞉> 
+#'app.subs/directions
+cljs꞉app.subs꞉> 
+#'app.subs/scan
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (square? m)
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (square? m)
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 0 0] [0 2 2]]"]
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 9.44s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.15s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.68s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 0.95s)
+#object[emmy.structure.Matrix "[[[0 1 0] [0 1 0] [0 1 0]]]"]
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; Assert failed: (square? m)
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 1 0] [0 1 0]]"]
+cljs꞉app.subs꞉> 
+3
+cljs꞉app.subs꞉> 
+[0 1 0]
+[0 1 0]
+[0 1 0]
+nil
+cljs꞉app.subs꞉> 
+0
+1
+0
+0
+1
+0
+0
+1
+0
+nil
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build failure:
+; ------ ERROR -------------------------------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:6:1
+; --------------------------------------------------------------------------------
+;    3 |             [emmy.env :as emmy :refer [*]]
+;    4 |             [emmy.matrix :as matrix]))
+;    5 | 
+;    6 | (def euclidean-distance [[x1 y1] [x2 y2]]
+; -------^------------------------------------------------------------------------
+; null
+; Too many arguments to def at line 6 app/subs.cljs
+; --------------------------------------------------------------------------------
+;    7 |   (emmy/sqrt (emmy/+ (emmy/square (emmy/- x2 x1))
+;    8 |                      (emmy/square (emmy/- y2 y1)))))
+;    9 | 
+;   10 | (def distance-matrix [])
+; --------------------------------------------------------------------------------
+; 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.87s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.88s)
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.70s)
+#'app.subs/distance-matrix
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; 3 is not ISeqable
+cljs꞉app.subs꞉> 
+#'app.subs/distance-matrix
+cljs꞉app.subs꞉> 
+0
+1
+2
+1
+1.4142135623730951
+2.23606797749979
+2
+2.23606797749979
+2.8284271247461903
+(nil nil nil nil nil nil nil nil nil)
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.99s)
+#'app.subs/distance-matrix
+cljs꞉app.subs꞉> 
+(0 1 2 1 1.4142135623730951 2.23606797749979 2 2.23606797749979 2.8284271247461903)
+cljs꞉app.subs꞉> 
+; Exception in thread "async-dispatch-7" java.io.IOException: UT002002: Channel is closed
+; 	at io.undertow.websockets.core.WebSocketChannel.send(WebSocketChannel.java:343)
+; 	at io.undertow.websockets.core.WebSockets.sendBlockingInternal(WebSockets.java:992)
+; 	at io.undertow.websockets.core.WebSockets.sendBlockingInternal(WebSockets.java:986)
+; 	at io.undertow.websockets.core.WebSockets.sendTextBlocking(WebSockets.java:200)
+; 	at shadow.undertow$eval24882$fn$reify__24889$fn__25013$state_machine__12215__auto____25052$fn__25055.invoke(undertow.clj:468)
+; 	at shadow.undertow$eval24882$fn$reify__24889$fn__25013$state_machine__12215__auto____25052.invoke(undertow.clj:468)
+; 	at clojure.core.async.impl.ioc_macros$run_state_machine.invokeStatic(ioc_macros.clj:978)
+; 	at clojure.core.async.impl.ioc_macros$run_state_machine.invoke(ioc_macros.clj:977)
+; 	at clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invokeStatic(ioc_macros.clj:982)
+; 	at clojure.core.async.impl.ioc_macros$run_state_machine_wrapped.invoke(ioc_macros.clj:9
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 0 0] [0 2 2]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 0 0] [0 1 1]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 0 0] [0 2 2]]"]
+cljs꞉app.subs꞉> 
+nil
+cljs꞉app.subs꞉> 
+((0 0) (1 0) (2 0) (0 1) (1 1) (2 1) (0 2) (1 2) (2 2))
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1 0] [0 0 0] [0 2 2]]"]
+cljs꞉app.subs꞉> 
+((0 1))
+cljs꞉app.subs꞉> 
+((2 1) (2 2))
+cljs꞉app.subs꞉> 
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+((2 1) (2 2))
+cljs꞉app.subs꞉> 
+((2 2) (1 2) (2 2) (1 2))
+cljs꞉app.subs꞉> 
+((2 1) (2 2))
+cljs꞉app.subs꞉> 
+((2 1) (2 2))
+cljs꞉app.subs꞉> 
+(((2 1) (2 1)) ((2 2) (2 1)) ((2 1) (2 2)) ((2 2) (2 2)))
+cljs꞉app.subs꞉> 
+(((2 1) (2 1)) ((2 2) (2 1)) ((2 1) (2 2)) ((2 2) (2 2)))
+cljs꞉app.subs꞉> 
+(0 1 1 0)
+cljs꞉app.subs꞉> 
+((0 1) (1 0))
+cljs꞉app.subs꞉> 
+((0))
+cljs꞉app.subs꞉> 
+((0 1) (1 0))
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+; [:app] Build completed. (416 files, 2 compiled, 3 warnings, 23.02s)
+; 
+; ------ WARNING #1 - :redef-in-file ---------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:63:1
+; --------------------------------------------------------------------------------
+;   60 |     @components))
+;   61 | 
+;   62 | 
+;   63 | (def directions
+; -------^------------------------------------------------------------------------
+;  directions at line 32 is being replaced
+; --------------------------------------------------------------------------------
+;   64 |   [[1 0] [0 1] [-1 0] [0 -1]])
+;   65 | 
+;   66 | (defn dfs [image components count root]
+;   67 |   (let [child-fn (fn [root]
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #2 - :redef-in-file ---------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:66:1
+; --------------------------------------------------------------------------------
+;   63 | (def directions
+;   64 |   [[1 0] [0 1] [-1 0] [0 -1]])
+;   65 | 
+;   66 | (defn dfs [image components count root]
+; -------^------------------------------------------------------------------------
+;  dfs at line 35 is being replaced
+; --------------------------------------------------------------------------------
+;   67 |   (let [child-fn (fn [root]
+;   68 |                    (filter (and (fn [c] (every? #(<= 0 % 4) c))
+;   69 |                                 (fn [c] (zero? (get-in @components c)))
+;   70 |                                 (fn [c] (= (get-in image c) 1)))
+; --------------------------------------------------------------------------------
+; 
+; ------ WARNING #3 - :redef-in-file ---------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:80:1
+; --------------------------------------------------------------------------------
+;   77 |                  (mapcat walk (child-fn c))))]
+;   78 |     (walk root)))
+;   79 | 
+;   80 | (defn scan [image]
+; -------^------------------------------------------------------------------------
+;  scan at line 50 is being replaced
+; --------------------------------------------------------------------------------
+;   81 |   (let [dimension (matrix/dimension image)
+;   82 |         components (atom (matrix/generate dimension dimension (constantly 0)))
+;   83 |         count (atom 0)]
+;   84 |     (doseq [i (range dimension)]
+; --------------------------------------------------------------------------------
+((0 1) (1 0))
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 6.56s)
+; 
+; ------ WARNING #1 - :redef-in-file ---------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:35:1
+; --------------------------------------------------------------------------------
+;   32 | (def directions
+;   33 |   [[1 0] [0 1] [-1 0] [0 -1]])
+;   34 | 
+;   35 | (def directions
+; -------^------------------------------------------------------------------------
+;  directions at line 32 is being replaced
+; --------------------------------------------------------------------------------
+;   36 |   [[1 0] [0 1] [-1 0] [0 -1]])
+;   37 | 
+;   38 | (defn dfs [image components count root]
+;   39 |   (let [child-fn (fn [root]
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.50s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.16s)
+((0 1) (1 0))
+cljs꞉app.subs꞉> 
+#object[emmy.structure.Matrix "[[0 1] [1 0]]"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-1*{} + 1*{0 2})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.87s)
+#'app.subs/compute-characteristic-polynomial-of-first-component
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+:repl/exception!
+; 
+; Execution error (Error) at (<cljs repl>:1).
+; not square
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.76s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.98s)
+#'app.subs/compute-characteristic-polynomial-of-first-component
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-4*{} + -6*{0 1} + 1*{0 3})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-7.313708498984761*{} + -17.656854249492383*{0 1} + -11*{0 2} + 1*{0 4})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-7.313708498984761*{} + -17.656854249492383*{0 1} + -11*{0 2} + 1*{0 4})"]
+cljs꞉app.subs꞉> 
+#object[emmy.polynomial.Polynomial "1: (-7.313708498984761*{} + -17.656854249492383*{0 1} + -11*{0 2} + 1*{0 4})"]
+cljs꞉app.subs꞉> 
+nil
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:4:11
+;  Use of undeclared Var app.subs/left-hand-signature
+; --------------------------------------------------------------------------------
+; 
+; 
+; ------ WARNING - :undeclared-var -----------------------------------------------
+;  Resource: <eval>:4:31
+;  Use of undeclared Var app.subs/right-hand-signature
+; --------------------------------------------------------------------------------
+; 
+cljs꞉app.subs꞉> 
+#'app.subs/compare-left-hand-image-and-right-hand-image
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 6.11s)
+true
+cljs꞉app.subs꞉> 
+false
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+false
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+false
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+true
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 7.56s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.47s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.46s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.50s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.75s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 6.00s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.84s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.60s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.08s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 4.89s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 5.02s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 0.98s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.21s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 0.93s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 0.91s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.43s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 3.21s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:81:23
+; --------------------------------------------------------------------------------
+;   78 | (rf/reg-sub :app/pixel-of-image
+;   79 |             :<- [:app/images]
+;   80 |             (fn [[left-or-right left-hand-image right-hand-image] [_ row column]]
+;   81 |               (get-in images [row column])))
+; -----------------------------^--------------------------------------------------
+;  Use of undeclared Var app.subs/images
+; --------------------------------------------------------------------------------
+;   82 | 
+;   83 | (rf/reg-sub :app/comparison-result
+;   84 |             :<- [:app/left-hand-image]
+;   85 |             :<- [:app/right-hand-image]
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.10s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.24s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.17s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.79s)
+; Evaluating file: subs.cljs
+nil
+cljs꞉app.subs꞉> 
+; Evaluating file: handlers.cljs
+({:id :coeffects, :before #object[re_frame$cofx$coeffects_before], :after nil} {:id :do-fx, :before nil, :after #object[re_frame$fx$do_fx_after]} {:id :inject-global-interceptors, :before #object[re_frame$std_interceptors$inject_global_interceptors_before], :after nil} {:id :store/set-todos, :before nil, :after #object[Function]} {:id :db-handler, :before #object[re_frame$std_interceptors$db_handler__GT_interceptor_$_db_handler_before], :after nil})
+cljs꞉app.handlers꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 15.74s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 12.12s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.27s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 4.56s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 10.18s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 5.66s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.95s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.56s)
+nil
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {0 {2 0}, 1 {2 0}, 2 {2 0}}}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val 1}]
+cljs꞉app.subs꞉> 
+#object[reagent.ratom.Reaction {:val 0}]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 7.96s)
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {0 {2 1}}}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]]}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {0 {2 0}}}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val 0}]
+cljs꞉app.subs꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {0 {2 0}}}}]
+cljs꞉app.core꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 8.46s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 6.44s)
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {0 {2 0}}}}]
+cljs꞉app.core꞉> 
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]]}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {0 {2 0}}}}]
+cljs꞉app.core꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.07s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.60s)
+#object[reagent.ratom.Reaction {:val {:left [[1 1 1] [0 0 0] [0 1 0]], :right [[0 1 0] [0 1 0] [0 1 0]]}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 1 1] [0 0 1] [0 1 0]], :right [[0 1 0] [0 1 0] [0 1 0]]}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 1] [0 1 0]], :right [[0 1 0] [0 1 0] [0 1 0]]}}]
+cljs꞉app.core꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 3.02s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:83:30
+; --------------------------------------------------------------------------------
+;   80 |               (:images db)))
+;   81 | 
+;   82 | (rf/reg-sub :app/pixel-of-image
+;   83 |             :<- [:app/images left-or-right]
+; ------------------------------------^-------------------------------------------
+;  Use of undeclared Var app.subs/left-or-right
+; --------------------------------------------------------------------------------
+;   84 |             (fn [images [_ left-or-right row column]]
+;   85 |               (get-in images [left-or-right row column])))
+;   86 | 
+;   87 | (rf/reg-sub :app/comparison-result
+; --------------------------------------------------------------------------------
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 0.97s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.89s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 0.82s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.02s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.91s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 1.77s)
+; [:app] Compiling ...
+; Evaluating file: handlers.cljs
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 2.45s)
+({:id :coeffects, :before #object[re_frame$cofx$coeffects_before], :after nil} {:id :do-fx, :before nil, :after #object[re_frame$fx$do_fx_after]} {:id :inject-global-interceptors, :before #object[re_frame$std_interceptors$inject_global_interceptors_before], :after nil} {:id :store/set-todos, :before nil, :after #object[Function]} {:id :db-handler, :before #object[re_frame$std_interceptors$db_handler__GT_interceptor_$_db_handler_before], :after nil})
+cljs꞉app.handlers꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 0.86s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.71s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 0.83s)
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]]}}]
+cljs꞉app.core꞉> 
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:left-or-right :left} {2 {0 0}}}}]
+cljs꞉app.core꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 4.97s)
+#object[reagent.ratom.Reaction {:val {:left [[1 0 0] [0 0 0] [0 0 0]], :right [[0 1 0] [0 1 0] [0 1 0]], {:children :left} {0 {2 1}}}}]
+cljs꞉app.core꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.24s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 1.84s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.79s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 5.78s)
+nil
+cljs꞉app.subs꞉> 
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.86s)
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+cljs꞉app.subs꞉> 
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+cljs꞉app.subs꞉> 
+cljs꞉app.subs꞉> 
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+cljs꞉app.subs꞉> 
+; Timeout while waiting for result.
+; The previously used runtime disappeared. Will attempt to pick a new one when available but your state might be gone.
+cljs꞉app.subs꞉> 
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+cljs꞉app.subs꞉> 
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+cljs꞉app.subs꞉> 
+; Timeout while waiting for result.
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+cljs꞉app.subs꞉> 
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 18.57s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 9.99s)
+; [:app] Compiling ...
+; [:app] Bu
+ild completed. (416 files, 1 compiled, 0 warnings, 18.88s)
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.90s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 6.05s)
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.03s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 14.63s)
+nil
+; No available JS runtime.
+; See https://shadow-cljs.github.io/docs/UsersGuide.html#repl-troubleshooting
+cljs꞉app.subs꞉> 
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; Timeout while waiting for result.
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 4.26s)
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 1 warnings, 4.77s)
+; 
+; ------ WARNING #1 - :undeclared-var --------------------------------------------
+;  File: /home/danielcraig/Repos/corrugate/src/app/subs.cljs:78:52
+; --------------------------------------------------------------------------------
+;   75 | (rf/reg-sub :app/image
+;   76 |             :<- [:app/images]
+;   77 |             (fn [images [_ left-or-right]]
+;   78 |               (apply matrix/by-rows (left-or-right db))))
+; ----------------------------------------------------------^---------------------
+;  Use of undeclared Var app.subs/db
+; --------------------------------------------------------------------------------
+;   79 | 
+;   80 | (rf/reg-sub :app/pixel-of-image
+;   81 |             :<- [:app/images]
+;   82 |             (fn [images [_ left-or-right row column]]
+; --------------------------------------------------------------------------------
+; Evaluating file: subs.cljs
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 3.14s)
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 2 compiled, 0 warnings, 0.82s)
+; The previously used runtime disappeared. Will attempt to pick a new one when available but your state might be gone.
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; The previously used runtime disappeared. Will attempt to pick a new one when available but your state might be gone.
+; No results from file evaluation.
+
+; INTERNAL REPL ERROR: Got an unexpected reply from relay, check Inspect
+; The previously used runtime disappeared. Will attempt to pick a new one when available but your state might be gone.
+cljs꞉app.subs꞉> 
+cljs꞉app.subs꞉> 
+cljs꞉app.subs꞉> 
+#object[reagent.ratom.Reaction {:val #object[emmy.structure.Matrix "[[1 0 0] [0 0 0] [0 0 0]]"]}]
+cljs꞉app.subs꞉> 
+#object[reagent.ratom.Reaction {:val "No"}]
+cljs꞉app.subs꞉> 
+; [:app] Compiling ...
+; [:app] Build completed. (416 files, 1 compiled, 0 warnings, 3.52s)
