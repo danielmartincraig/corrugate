@@ -60,7 +60,13 @@
         b (matrix/by-rows [0 1 0]
                           [0 1 0]
                           [0 0 0])]
-    (compare-left-hand-image-and-right-hand-image a b)))
+    (compare-left-hand-image-and-right-hand-image a b))
+
+  (let [a (matrix/by-rows [0 0 0]
+                          [0 0 0]
+                          [0 1 1])]
+    (str (compute-characteristic-polynomial-of-first-component a))))
+
 
 
 (rf/reg-sub :app/todos
@@ -88,4 +94,24 @@
             (fn [[left-hand-image right-hand-image] _]
               (if (compare-left-hand-image-and-right-hand-image left-hand-image right-hand-image) "Yes" "No")))
 
-;; (rf/subscribe [:app/image :left])
+(rf/reg-sub :app/signature
+            :<- [:app/image :left]
+            (fn [image _]
+              (str (compute-characteristic-polynomial-of-first-component image))))
+
+(rf/reg-sub :app/legos
+            (fn [db _]
+              (:legos db)))
+
+(rf/reg-sub :app/lego-suggestion
+            :<- [:app/legos]
+            :<- [:app/signature]
+            (fn [[legos signature] _]
+              (get legos signature)))
+
+(rf/reg-sub :app/lego-suggestion-name
+            :<- [:app/lego-suggestion]
+            (fn [suggestion _]
+              (:name suggestion)))
+
+(rf/subscribe [:app/lego-suggestion-name])

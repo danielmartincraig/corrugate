@@ -13,16 +13,27 @@
 (defui header []
   ($ :header.app-header
      ($ :h1 {:width 32}
-        "Are these two shapes the same?")))
+        "Lego Technic Liftarm Identifier")))
+
+(defui lego-suggestor-view []
+  (let [suggestion (hooks/use-subscribe [:app/lego-suggestion-name])]
+    ($ :div (if suggestion
+              ($ :h2 ($ :a {:href (str "https://www.bricklink.com/v2/catalog/catalogitem.page?P=" suggestion)} suggestion))
+              ($ :h2 "No matching liftarm found")))))
 
 (defui footer []
-  (let [result (hooks/use-subscribe [:app/comparison-result])]
-    ($ :footer.app-footer
-       ($ :div
-          ($ :h2 result)
-          ($ :small "made with "
-             ($ :a {:href "https://github.com/pitch-io/uix"}
-                "UIx"))))))
+  ($ :footer.app-footer
+     ($ :div
+        ($ lego-suggestor-view)
+        ($ :small "made with "
+           ($ :a {:href "https://github.com/pitch-io/uix"}
+              "UIx")
+           ", "
+           ($ :a {:href "https://day8.github.io/re-frame/"}
+              "re-frame")
+           ", and "
+           ($ :a {:href "https://emmy.mentat.org/"}
+              "the emmy computer algebra system")))))
 
 (defui pixel-view [{:keys [left-or-right row column]}]
   (let [p (hooks/use-subscribe [:app/pixel-of-image left-or-right row column])]
@@ -46,18 +57,11 @@
                       :row row
                       :left-or-right left-or-right})))))
 
-(defui left-and-right-image-view []
-  ($ :div
-     ($ :div ($ image-view {:left-or-right :left}))
-
-     ($ :div
-        ($ image-view {:left-or-right :right}))))
-
 (defui app []
   (let [todos (hooks/use-subscribe [:app/todos])]
     ($ :.app
        ($ header)
-       ($ left-and-right-image-view)
+       ($ image-view {:left-or-right :left})
        ($ footer))))
 
 (defonce root
