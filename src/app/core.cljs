@@ -38,8 +38,11 @@
 (defui pixel-view [{:keys [left-or-right row column]}]
   (let [p (hooks/use-subscribe [:app/pixel-of-image left-or-right row column])]
     ($ :button
-       {:on-click #(rf/dispatch [:event/toggle-pixel left-or-right row column])}
-       (if (zero? p) "O" "X"))))
+       {:style {:background-color (if (zero? p) "white" "blue")
+                :width "100px"
+                :height "100px"
+                :border-width "5px"}
+        :on-click #(rf/dispatch [:event/toggle-pixel left-or-right row column])})))
 
 (defui row-view [{:keys [row left-or-right]}]
   (let [image-dimension 3]
@@ -51,7 +54,7 @@
 
 (defui image-view [{:keys [left-or-right]}]
   (let [image-dimension 3]
-    ($ :div
+    ($ :div.image-view
        (for [row (range image-dimension)]
          ($ row-view {:key (str "row" row)
                       :row row

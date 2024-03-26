@@ -1,6 +1,6 @@
 (ns app.subs
   (:require [re-frame.core :as rf]
-            [emmy.env :as emmy :refer [*]]
+            [emmy.env :as emmy :refer [* /]]
             [emmy.matrix :as matrix]
             [emmy.util.permute :as permute]))
 
@@ -36,7 +36,7 @@
           (dfs image components (swap! count inc) [i j]))))
     @components))
 
-(defn compute-characteristic-polynomial-of-first-component [image]
+(defn compute-determinant-of-first-component [image]
   (let [labeled-image (scan image)
         dimension (matrix/dimension image)
         indices (permute/cartesian-product [(range dimension) (range dimension)])
@@ -44,11 +44,12 @@
         arcs (permute/cartesian-product [first-component first-component])
         distances (map (partial apply euclidean-distance) arcs)
         distance-matrix (apply matrix/by-rows (partition (count first-component) distances))]
-    (matrix/characteristic-polynomial distance-matrix)))
+    (emmy// (emmy/floor (emmy/* (matrix/determinant distance-matrix) 10000))
+            10000)))
 
 (defn compare-left-hand-image-and-right-hand-image [lh rh]
-  (let [left-hand-signature (compute-characteristic-polynomial-of-first-component lh)
-        right-hand-signature (compute-characteristic-polynomial-of-first-component rh)]
+  (let [left-hand-signature (compute-determinant-of-first-component lh)
+        right-hand-signature (compute-determinant-of-first-component rh)]
     (emmy/= left-hand-signature right-hand-signature)))
 
 (comment
@@ -62,17 +63,30 @@
                           [0 0 0])]
     (compare-left-hand-image-and-right-hand-image a b))
 
+  (let [a (matrix/by-rows [0 1 0]
+                          [0 1 0]
+                          [1 1 1])]
+    (compute-determinant-of-first-component a))
+
   (let [a (matrix/by-rows [0 0 0]
                           [0 0 0]
                           [0 1 1])]
-    (str (compute-characteristic-polynomial-of-first-component a))))
+    (compute-determinant-of-first-component a))
 
+  (let [a (matrix/by-rows [0 1 0]
+                          [0 1 0]
+                          [1 1 1])]
+    (emmy// (emmy/floor (emmy/* (compute-determinant-of-first-component a) 1000))
+            1000))
 
+  (let [a (matrix/by-rows [1 0 0]
+                          [1 1 1]
+                          [1 0 0])]
+    (matrix/determinant a)))
 
 (rf/reg-sub :app/todos
             (fn [db _]
               (:todos db)))
-
 
 (rf/reg-sub :app/images
             (fn [db _]
@@ -97,7 +111,7 @@
 (rf/reg-sub :app/signature
             :<- [:app/image :left]
             (fn [image _]
-              (str (compute-characteristic-polynomial-of-first-component image))))
+              (str (compute-determinant-of-first-component image))))
 
 (rf/reg-sub :app/legos
             (fn [db _]
@@ -113,5 +127,3 @@
             :<- [:app/lego-suggestion]
             (fn [suggestion _]
               (:name suggestion)))
-
-(rf/subscribe [:app/lego-suggestion-name])
